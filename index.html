@@ -6,24 +6,22 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsible IT 3</title>
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script src="/scripts/main.js" defer type="module"></script>
-    <script src="/scripts/fetchEmails.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <p>Gmail API Quickstart</p>
-    <button id="authorize_button">Authorize</button>
-    <button id="signout_button">Sign Out</button>
-
-    <pre id="content" style="white-space: pre-wrap;">
-    <div class="s"></div>
-
-    </pre>
+    <div class="index-container">
+        <div class="pop-up">
+            <img class="pop-up__mr-green" src="/images/illustrations/mr_green.svg" alt="mr green">
+            <p class="pop-up__hero-text">Psst, <br> Hey, You (Yes, You)</p>
+            <p class="pop-up__text">Did you know that your unused emails
+                cause 1 kilo of CO2 emissions?</p>
+            <a href="/fetch.html" class="pop-up__button">Let's clean together!</a>
+        </div>
+    </div>
 </body>
 
 </html>
