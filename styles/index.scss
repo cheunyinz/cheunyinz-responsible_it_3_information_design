@@ -1,0 +1,50 @@
+.index-container {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-image: url(../images/pictures/index_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+}
+
+.pop-up {
+    position: relative;
+    background-color: var(--sky-background-color);
+    background-image: url(../images/illustrations/clouds_pattern.svg);
+    background-position: -5rem;
+    background-size: cover;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    max-width: 35rem;
+
+    &__hero-text {
+        font-weight: 600;
+        font-size: 3rem;
+        max-width: 20rem;
+        line-height: 1.2;
+    }
+
+    &__text {
+        max-width: 20rem;
+        margin-block: 2.5rem 1rem;
+    }
+
+    &__mr-green {
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        max-height: 11rem;
+        height: 100%;
+    }
+
+    &__button {
+        color: var(--primary-text-color-light);
+        background-color: var(--primary-accent-color);
+        width: 100%;
+        text-align: center;
+        padding-block: .75rem;
+        border-radius: .5rem;
+    }
+}
