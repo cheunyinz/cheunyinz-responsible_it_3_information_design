@@ -25,14 +25,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1,
 h2,
 h3,
 h4 {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 ol,
@@ -42,4 +42,26 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+
+/*KLEUR PALLET*/
+:root {
+    --primary-accent-color: #7AB237;
+    --primary-accent-color-light: #CAF596;
+    --primary-text-color-dark: #000000;
+    --primary-text-color-light: #fff;
+
+    --sunburst-segment-inbox: #CA1818;
+    --sunburst-segement-subscriptions: #FAA41B;
+    --sunburst-segment-spam: #FFD45B;
+    --sunburst-segment-bin: #C9E58C;
+    --sunburst-segment-sent: #7BA591;
+    --suburst-segment-archive: #8CE5A0;
+    --sunburst-segment-duplicates: #F15B4C;
+    --sunburst-segment-drafts: #2C736C;
+
+    --sky-background-color: #DEEFFF;
+    --sky-cloud-color: #5EB2E5;
+
 }
