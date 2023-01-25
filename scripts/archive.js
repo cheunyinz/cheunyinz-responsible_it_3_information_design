@@ -375,3 +375,19 @@ authorizeBtn.addEventListener('click', () => {
 signOutBtn.addEventListener('click', () => {
     handleSignoutClick()
 });
+
+
+
+
+// categorizedResults.children[0].items.forEach(item => {
+//     console.log(categorizedResults.children[0])
+
+//     if (categorizedResults.children[0].placeholder[item.name]) {
+//         categorizedResults.children[0].placeholder[item.name].push(categorizedResults.children[0].placeholder)
+//     } else {
+//         categorizedResults.children[0].placeholder[item.name] = new Array();
+//         categorizedResults.children[0].placeholder[item.name].push(categorizedResults.children[0].placeholder)
+//     }
+// })
+
+// loop door een loop
