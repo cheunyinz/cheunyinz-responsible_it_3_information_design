@@ -19,8 +19,6 @@ let gapiInited = false;
 let gisInited = false;
 
 let rawResults = [];
-let sunburstData = {};
-
 
 const authorizeBtn = document.querySelector('#authorize_button');
 const signOutBtn = document.querySelector('#signout_button');
@@ -114,6 +112,31 @@ function handleSignoutClick() {
     }
 }
 
+// /**
+//  * Print all Labels in the authorized user's inbox. If no labels
+//  * are found an appropriate message is printed.
+//  */
+// async function listLabels() {
+//     let response;
+//     try {
+//         response = await gapi.client.gmail.users.labels.list({
+//             'userId': 'me',
+//         });
+//     } catch (err) {
+//         document.getElementById('content').innerText = err.message;
+//         return;
+//     }
+//     const labels = response.result.labels;
+//     if (!labels || labels.length == 0) {
+//         document.getElementById('content').innerText = 'No labels found.';
+//         return;
+//     }
+//     // Flatten to string to display
+//     const output = labels.reduce(
+//         (str, label) => `${str}${label.name}\n`,
+//         'Labels:\n');
+//     document.getElementById('content').innerText = output;
+// }
 
 async function listAllEmails(token, query) {
     const params = {
@@ -220,21 +243,19 @@ function filterRawResults(results) {
             inbox: result.labelIds.find((id) => id.includes("INBOX")),
             name: Object.values(result.payload.headers).find(
                 (obj) => obj.name === "From")?.value.split('<')[0].trim(),
-            company: Object.values(result.payload.headers).find(
-                (obj) => obj.name === "From")?.value.match(/@(.*?)>/)[1],
-            size: (result.sizeEstimate / 1048576),
+            value: (result.sizeEstimate / 1048576).toFixed(2).toString(),
             subject: Object.values(result.payload.headers).find(
                 (obj) => obj.name === "Subject")?.value.trim(),
         };
     });
 
-    groupByCategoryResults(filteredResults, 'category');
+    categorizeResults(filteredResults);
 
 }
 
-function groupByCategoryResults(results, query) {
+function categorizeResults(results) {
 
-    let uniqueValues = [...new Set(results.map(x => x[query]))];
+    let uniqueValues = [...new Set(results.map(x => x['category']))];
 
     let categorizedResults =
     {
@@ -242,67 +263,100 @@ function groupByCategoryResults(results, query) {
         children: uniqueValues.map((val) => {
             return {
                 name: val,
-                children: results.filter((x) => x[query] === val)
+                children: results.filter((x) => x['category'] === val)
             }
         })
     }
+    console.log(categorizedResults.children, "categorized results");
 
-    groupByCompanyResults(categorizedResults);
-}
-
-function groupByCompanyResults(results) {
-    let categorizeByCompanyResults = results.children.map(item => {
+    let finalResults = categorizedResults.children.map(item => {
         let newSubArray = {};
         for (let i = 0; i < item.children.length; i++) {
-            let company = item.children[i].company;
-            if (!newSubArray[company]) {
-                newSubArray[company] = []
+            let name = item.children[i].name;
+            if (!newSubArray[name]) {
+                newSubArray[name] = []
 
             }
-            newSubArray[company].push(item.children[i]);
+            newSubArray[name].push(item.children[i]);
         }
         let finalArray = [];
-        for (let company in newSubArray) {
-            finalArray.push({ name: company, children: newSubArray[company] });
+        for (let name in newSubArray) {
+            finalArray.push({ name: name, children: newSubArray[name] });
         }
         item.children = finalArray;
         return item;
     });
 
-    console.log(categorizeByCompanyResults, "comp");
-    groupByNameResults(categorizeByCompanyResults);
-
-    let sunburstData = {
-        name: "Sunburst",
-        children: categorizeByCompanyResults
+    const sunburstData = {
+        name: "sunBurst",
+        children: finalResults
     }
+    console.log(sunburstData, "final results")
 
-    console.log(sunburstData)
 }
 
-function groupByNameResults(results) {
 
-    let finalResults = results.map(item => {
-        let newSubArray = {};
-        for (let i = 0; i < item.children.length; i++) {
-            for (let k = 0; k < results[i].children[i].children.length; k++) {
-                let name = item.children[k].name;
-                if (!newSubArray[name]) {
-                    newSubArray[name] = []
-                }
-                newSubArray[name].push(item.children[k]);
-            }
-            let finalArray = [];
-            for (let name in newSubArray) {
-                finalArray.push({ name: name, children: newSubArray[name] });
-            }
-            item.children = finalArray;
-            return item;
-        }
-    });
 
-    console.log(finalResults, "groupedArRAY")
-}
+//Create a new array where the sub arrays has new sub arrays with the same sender
+// const finalResults = groupedResults.map(subArray => subArray.reduce((acc, obj) => {
+//     if (!acc[obj.sender]) {
+//         acc[obj.sender] = [];
+//     }
+//     acc[obj.sender].push(obj);
+//     return acc;
+// }, []));
+// console.log(finalResults);
+
+// //HEEFT BIJNA DE STRUCTUUR DIE IK WEL
+// function filterRawResults(results) {
+
+// // Create a new array with sub arrays which are all from the same category
+// let uniqueValues = [...new Set(filteredResults.map(x => x['category']))];
+// console.log(uniqueValues)
+// let groupedResults = uniqueValues.map(val => filteredResults.filter(x => x['category'] === val));
+
+// //Create a new array where the sub arrays has new sub arrays with the same sender
+// const finalResults = groupedResults.map(subArray => subArray.reduce((acc, obj) => {
+//     if (!acc[obj.sender]) {
+//         acc[obj.sender] = [];
+//     }
+//     acc[obj.sender].push(obj);
+//     return acc;
+// }, []));
+// console.log(finalResults);
+// }
+
+
+// function filterRawResults(results) {
+
+//     //Create a new array of objects of each message
+//     let filteredResults = results.map((result) => {
+//         return {
+//             category: result.labelIds[0],
+//             inbox: result.labelIds.find((id) => id.includes("INBOX")),
+//             sender: Object.values(result.payload.headers).find(
+//                 (obj) => obj.name === "From")?.value.split('<')[0].trim(),
+//             size: (result.sizeEstimate / 1048576).toFixed(2).toString()
+//         };
+//     });
+
+//     //Create a new array with sub arrays which are all from the same category
+//     let uniqueValues = [...new Set(filteredResults.map(x => x['category']))];
+//     let groupedResults = uniqueValues.map(val => filteredResults.filter(x => x['category'] === val));
+//     console.log(groupedResults)
+
+//     const key = 'category';
+//     const uniqueNames = [...new Set(filteredResults.map(x => x[key]))];
+//     const result = {
+//         uniqueNames: uniqueNames,
+//         sameNames: uniqueNames.map(val => filteredResults.filter(x => x[key] === val))
+//     };
+
+//     console.log(result, "result")
+
+// }
+
+
 
 
 
@@ -321,3 +375,19 @@ authorizeBtn.addEventListener('click', () => {
 signOutBtn.addEventListener('click', () => {
     handleSignoutClick()
 });
+
+
+
+
+// categorizedResults.children[0].items.forEach(item => {
+//     console.log(categorizedResults.children[0])
+
+//     if (categorizedResults.children[0].placeholder[item.name]) {
+//         categorizedResults.children[0].placeholder[item.name].push(categorizedResults.children[0].placeholder)
+//     } else {
+//         categorizedResults.children[0].placeholder[item.name] = new Array();
+//         categorizedResults.children[0].placeholder[item.name].push(categorizedResults.children[0].placeholder)
+//     }
+// })
+
+// loop door een loop
