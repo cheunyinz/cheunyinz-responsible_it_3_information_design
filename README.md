@@ -1,1 +1,2 @@
-# cheunyinz-responsible_it_3_information_design
+# RESPONSIBLE IT - GREEN G 
+Aan ons de opdracht om een Interactieve datavisualisatie voor Gmail te maken. De datavisualisatie moet ervoor zorgen dat de gebruiker inzicht krijgt hoeveel mailtjes diegene heeft, voor hoeveel CO2 al deze mailtjes zorgen en hoe wij diegene kunnen motiveren om zo veel mogelijk mailtjes te verwijderen. Om zo op deze manier de CO2 uitstoot van de gebruiker te verminderen. 
