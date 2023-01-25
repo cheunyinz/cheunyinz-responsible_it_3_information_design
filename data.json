@@ -1,0 +1,114 @@
+{
+    "name" :"22c02",
+    "children": [
+        {
+            "name": "Inbox",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 200
+                },
+                {
+                    "name": "Sent",
+                    "size": 300
+                }
+            ]
+        },
+        {
+            "name": "Subscriptions",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 200
+                },
+                {
+                    "name": "Sent",
+                    "size": 300
+                }
+            ]
+
+        },
+        {
+            "name": "spam",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 200
+                },
+                {
+                    "name": "Sent",
+                    "size": 300
+                }
+            ]
+
+        },
+        {
+            "name": "Bin",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 100
+                },
+                {
+                    "name": "Sent",
+                    "size": 200
+                }
+            ]
+
+        },
+        {
+            "name": "   Sent",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 100
+                },
+                {
+                    "name": "Sent",
+                    "size": 200
+                }
+            ]
+        },
+        {
+            "name": "Archives",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 100
+                },
+                {
+                    "name": "Sent",
+                    "size": 200
+                }
+            ]
+        },
+        {
+            "name": "Duplicates",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 100
+                },
+                {
+                    "name": "Sent",
+                    "size": 200
+                }
+            ]
+        },
+        {
+            "name": "Drafts",
+            "children" : [
+                {
+                    "name": "Forwarded",
+                    "size": 100
+                },
+                {
+                    "name": "Sent",
+                    "size": 200
+                }
+            ]
+        }
+        
+    ]
+
+}

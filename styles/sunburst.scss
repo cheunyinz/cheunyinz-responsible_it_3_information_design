@@ -1,0 +1,137 @@
+
+body {
+    font-family: Sans-serif;
+    font-size: 11px;
+    background-color: #5eb1e52e;
+    background-image: url(/images/illustrations/background.svg);
+}
+
+.slice {
+    cursor: pointer;
+}
+
+.slice .main-arc {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+.slice .hidden-arc {
+    fill: none;
+}
+
+.slice text {
+    pointer-events: none;
+    // dominant-baseline: middle;
+    text-anchor: middle;
+}
+
+
+.middlepoint{
+    top: 53%;
+    left: 51.3%;
+    width: 25em;
+    height: 21em;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    z-index: -2;
+}
+h1{
+    color: black;
+    text-align: center;
+    margin-top: 1em;
+    font-size: 3rem;
+}
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: -1em;
+    margin-bottom: 2em;
+
+
+
+
+}
+.container{
+    top: 35%;
+    left: 37%;
+    z-index: 1;
+    width: 21.5em;
+    height: 21em;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    position: absolute;
+    
+
+}
+
+.info-icon {
+    position: absolute;
+    width:10%;
+    top: 27em;
+    left: 25em;
+    z-index:100;
+    // transform: translate(-50%, -50%);
+    position: absolute;
+
+}
+
+
+
+
+.popimg{
+    position: absolute;
+    width : 200%;
+    left:5em;
+    top: -4px;
+    animation-name: zoom;
+    animation-duration: 2s;
+    
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+
+.close {
+    position: absolute;
+    // bottom: 2px;
+    height: 35px;
+    top:-1em;
+    left: 7em;
+    color: var(--primary-accent-color-light);
+    font-size: 40px;
+    font-weight: normal;
+    transition: 0.3s;
+    z-index: 10;
+    padding: 5px;
+  }
+
+  .close:hover,
+  .close:focus {
+    color:var(--primary-text-color-dark);
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+
+img.chatrobot {
+    position: absolute;
+    top:60%;
+    left: 2%;
+    width: 15%;
+}
+img.chat1 {
+    position: absolute;
+    left: 10em;
+    top: 40%;
+    width:15%;
+}
+
