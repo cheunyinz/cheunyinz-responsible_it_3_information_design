@@ -23,6 +23,9 @@ Voor de applicatie hebben wij  de volgende packages geinstalleeerd :
 * D3
 * Vite 
 
+
+
+
 ## Onderzoek naar libraries. 
 We hebben onderzoek gedaan naar libraries voor het maken van mooie data visualisatie. We hebben gekeken naar anychart. js ,chart.js en d3. 
 
