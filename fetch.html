@@ -10,6 +10,8 @@
     <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script src="/scripts/main.js" defer type="module"></script>
     <script src="/scripts/fetchEmails.js" defer></script> <!--VERWIJDER MODULE-->
+    <script src="./scripts/sunburst.js" type="module" defer></script>
+    <script src="./scripts/popup.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
@@ -20,156 +22,171 @@
     <button id="authorize_button">Authorize</button>
     <button id="signout_button">Sign Out</button>
 
-    <pre id="content" style="white-space: pre-wrap;">
-    <div class=""></div>
-
-    </pre>
-
-    <section class="emails-side-panel">
-        <div class="email-list">
-            <h2 class="email-list__title">
-                Subscription
-            </h2>
-            <form class="email-list__container">
-                <fieldset class="email-list__sorting">
-                    <legend>Sort</legend>
-                    <div class="email-list__sorting-inputs">
-                        <label>Size<input checked="checked" type="radio" name="sort" id="size"></label>
-                        <label>Date<input type="radio" name="sort" id="date"></label>
-                        <label>Flag<input type="radio" name="sort" id="flag"></label>
-                        <label>Files<input type="radio" name="sort" id="files"></label>
-                    </div>
-                </fieldset>
-                <button class="email-list__select-all-btn">Select all</button>
-                <fieldset class="email-list__messages">
-                    <ol class="email-list__messages-list">
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="1">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
+    <main>
+        <div class="messages-container">
+            <section class="sunburst">
+                <!-- <div class="middlepoint">
+                    <h1>22kg</h1>
+                    <h2>Co2</h2>
+                </div>
+                <div class="container" id="popUp">
+                    <span class="close">&times;</span>
+                    <img class="info-icon" id="info-icon" src="images/illustrations/info_icon.svg" alt="">
+                </div>
+                <section>
+                    <article>
+                        <img class="chat1" src="images/illustrations/chat_1.svg" alt="chat">
+                        <img class="chatrobot" src="images/illustrations/mr_green.svg" alt=" mr green">
+                    </article> -->
+            </section>
+            </section>
+            <section class="emails-side-panel">
+                <div class="email-list">
+                    <h2 class="email-list__title">
+                        Subscription
+                    </h2>
+                    <form class="email-list__container">
+                        <fieldset class="email-list__sorting">
+                            <legend>Sort</legend>
+                            <div class="email-list__sorting-inputs">
+                                <label>Size<input checked="checked" type="radio" name="sort" id="size"></label>
+                                <label>Date<input type="radio" name="sort" id="date"></label>
+                                <label>Flag<input type="radio" name="sort" id="flag"></label>
+                                <label>Files<input type="radio" name="sort" id="files"></label>
                             </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="2">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="3">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="4">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="5">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="6">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="7">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                        <li class="message">
-                            <input class="message__checkbox" type="checkbox" name="message" id="8">
-                            <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
-                                alt="ali express logo">
-                            <div class="message__details">
-                                <p class="message__sender">AliExpress</p>
-                                <p class="message__subject">3-15 days delivery</p>
-                                <p class="message__description">Deals met supersnelle verzending...</p>
-                            </div>
-                            <div class="message__extra">
-                                <time class="message__time">12:33</time>
-                                <img class="message__favorite" src="./images/illustrations/message_star.svg"
-                                    alt="add to favorite star">
-                            </div>
-                        </li>
-                    </ol>
-                </fieldset>
-            </form>
+                        </fieldset>
+                        <button class="email-list__select-all-btn">Select all</button>
+                        <fieldset class="email-list__messages">
+                            <ol class="email-list__messages-list">
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="1">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="2">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="3">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="4">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="5">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="6">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="7">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                                <li class="message">
+                                    <input class="message__checkbox" type="checkbox" name="message" id="8">
+                                    <img class="message__photo" src="./images/illustrations/ali_express_logo.svg"
+                                        alt="ali express logo">
+                                    <div class="message__details">
+                                        <p class="message__sender">AliExpress</p>
+                                        <p class="message__subject">3-15 days delivery</p>
+                                        <p class="message__description">Deals met supersnelle verzending...</p>
+                                    </div>
+                                    <div class="message__extra">
+                                        <time class="message__time">12:33</time>
+                                        <img class="message__favorite" src="./images/illustrations/message_star.svg"
+                                            alt="add to favorite star">
+                                    </div>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </form>
+                </div>
+                <button class="emails-side-panel__btn">Delete</button>
+                <p class="emails-side-panel__text">And save <strong>3kg co2</strong></p>
+            </section>
         </div>
-        <button class="emails-side-panel__btn">Delete</button>
-        <p class="emails-side-panel__text">And save <strong>3kg co2</strong></p>
-    </section>
+    </main>
 </body>
 
 </html>
