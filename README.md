@@ -2,6 +2,11 @@
 
 # RESPONSIBLE IT - GREEN G  
 
+
+
+
+##Introductie 
+
 Aan ons de opdracht om een Interactieve datavisualisatie voor Gmail te maken. De datavisualisatie moet ervoor zorgen dat de gebruiker inzicht krijgt hoeveel mailtjes diegene heeft, voor hoeveel CO2 al deze mailtjes zorgen en hoe wij diegene kunnen motiveren om zo veel mogelijk mailtjes te verwijderen. Om zo op deze manier de CO2 uitstoot van de gebruiker te verminderen. 
 
 
@@ -12,9 +17,9 @@ Aan ons de opdracht om een Interactieve datavisualisatie voor Gmail te maken. De
 | Xavier               |   Whitney Abrah
  
 
-## Packages / libraries  geinstallerd
+## Packages / libraries  geinstalleerd
 
-Voor de applicatie hebben wij  de volgende packages geinstalleeerd":
+Voor de applicatie hebben wij  de volgende packages geinstalleeerd :
 * D3
 
 
@@ -31,10 +36,11 @@ Voor dit project  ik hebben wij gebruik gemaakt  van MIT licence .Feel free to p
 ## Resources 
 
  -  Stack Overflow - Where Developers Learn, Share, & Build Careers. (n.d.).Stack Overflow. https://stackoverflow.com/
-  
  -  GitHub: Where the world builds software. (n.d.). GitHub. https://github.com/
- 
- -  MDN. (2021, 14 september). Introduction to the DOM - Web APIs : https://developer.mozilla.org/en-     US/docs/Web/API/Document_Object_Model/Introduction
+ - https://observablehq.com/@d3/zoomable-sunburst
+ - https://stackoverflow.com/questions/68403276/d3-js-v7-equivalent-of-d3-scale-ordinal - Scaleordinal van de kleuren voor de sunburst 
+ - https://www.w3schools.com/howto/howto_css_modal_images.asp- W3 school - Pop images 
+ - https://openai.com/blog/chatgpt/ - GPTchat - Pop images 
      
   
   
