@@ -1,25 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src="./scripts/sunburst.js" type="module" defer></script>
+    <script src="./scripts/popup.js" defer></script>
+    <link rel="stylesheet" href="/styles/main.scss">
     <title>Sunburst</title>
-    <link rel="stylesheet" href="/styles/sunburst.scss">
 </head>
-<body>
+
+<body class="sunburst">
     <div class="middlepoint">
         <h1>22kg</h1>
-        <h2>Co2</h2>    
+        <h2>Co2</h2>
     </div>
 
-<!-- Pop  up image-->
-<div class="container" id="popUp">
-    <span class="close">&times;</span>
-    <img class="info-icon" id="info-icon" src="images/illustrations/infoicon.svg" alt="">
-</div>
+    <!-- Pop  up image-->
+    <div class="container" id="popUp">
+        <span class="close">&times;</span>
+        <img class="info-icon" id="info-icon" src="images/illustrations/infoicon.svg" alt="">
+    </div>
 
     <section>
         <article>
@@ -28,6 +30,6 @@
         </article>
     </section>
 </body>
-<script src="scripts/sunburst.js"></script>
-<script src="scripts/popup.js"></script>
+
+
 </html>
