@@ -42,9 +42,9 @@ Chart  is ook een Javascript bibliotheek voor het maken van interactieve visuali
 
 Een ander nadeel is dat Chart.js niet zo flexibel is als sommige van de andere populaire grafiekbibliotheken op de markt, zoals D3.js, waardoor het moeilijker is om aangepaste of geavanceerde visualisaties te maken.Een ander nadeel is dat het niet altijd eenvoudig is om gegevens te exporteren of te integreren met andere systemen.
 
-- D3 .js 
+- D3 .js - Gekozen library
 
-We hebben uiteindelijk voor d3 gekozen want  het is zeer flexibel en krachtig, waardoor het geschikt is voor het maken van aangepaste grafieken, kaarten en andere visualisaties.D3.js heeft een grote en actieve gemeenschap, waardoor er veel voorbeelden, tutorials en hulpmiddelen beschikbaar zijn. 
+We hebben uiteindelijk voor d3 gekozen want  het is zeer flexibel en krachtig, waardoor het geschikt is voor het maken van aangepaste grafieken, kaarten en andere visualisaties.D3.js heeft een grote en actieve gemeenschap, waardoor er veel voorbeelden, tutorials en hulpmiddelen beschikbaar zijn.Daarnaast is D3.js is een open-source project, dus het is gratis te gebruiken en kan worden aangepast aan de specifieke behoeften van een project.Daarom hebben wij d3 als onze eerst keuze gekozen 
 
 ## Hoe kun je de package runnen. 
   Om de applicatie op je device te kunnen runnen moet je in je terminal npm run dev intypen. 
