@@ -1,6 +1,9 @@
+<<<<<<< HEAD
+=======
 import * as d3 from 'd3';
 
 
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
 const width = window.innerWidth,
 height = window.innerHeight,
 maxRadius = (Math.min(width, height) / 2) - 5;
@@ -12,9 +15,11 @@ const x = d3.scaleLinear()
 .clamp(true);
 
 const y = d3.scaleSqrt()
-.range([maxRadius * .1, maxRadius]);
+.range([maxRadius *.4, maxRadius]);
 
-const color = d3.scaleOrdinal(d3.schemeCategory10);
+// const color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scaleOrdinal()
+      .range(['white','#CA1818','#FAA41B','#FFD45B','#C9E58C','#7BA591','#8CE5A0','#F15B4C','#2C736C']);
 
 const partition = d3.partition();
 
@@ -39,7 +44,11 @@ return path.toString();
 };
 
 const textFits = d => {
+<<<<<<< HEAD
+const CHAR_SPACE = 1;
+=======
 const CHAR_SPACE = 6;
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
 
 const deltaAngle = x(d.x1) - x(d.x0);
 const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
@@ -48,13 +57,21 @@ const perimeter = r * deltaAngle;
 return d.data.name.length * CHAR_SPACE < perimeter;
 };
 
+<<<<<<< HEAD
+const svg = d3.select('body').append('svg')
+=======
 const svg = d3.select('.chart').append('svg')
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
 .style('width', '100vw')
 .style('height', '100vh')
 .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
 .on('click', () => focusOn()); // Reset zoom on canvas click
 
+<<<<<<< HEAD
+d3.json('/data.json', (error, root) => {
+=======
 d3.json('/flare.json', (error, root) => {
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
 if (error) throw error;
 
 root = d3.hierarchy(root);
@@ -94,7 +111,11 @@ text.append('textPath')
     .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
     .text(d => d.data.name)
     .style('fill', 'none')
+<<<<<<< HEAD
+    .style('stroke', 'none')
+=======
     .style('stroke', '#fff')
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
     .style('stroke-width', 5)
     .style('stroke-linejoin', 'round');
 
@@ -135,4 +156,9 @@ function moveStackToFront(elD) {
             if (d.parent) { moveStackToFront(d.parent); }
         })
 }
+<<<<<<< HEAD
 }
+
+=======
+}
+>>>>>>> f07015cd33ccd81bbf345abfedd890687a3994df
