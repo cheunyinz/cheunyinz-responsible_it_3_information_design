@@ -54,6 +54,11 @@ h2 {
 
 }
 
+.messages-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
 .container {
     top: 35%;
     left: 37%;

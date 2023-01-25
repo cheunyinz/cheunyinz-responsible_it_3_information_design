@@ -1,7 +1,5 @@
 body {
     background-color: var(--sky-background-color);
-    display: grid;
-    place-content: center;
 }
 
 .email-list {
@@ -145,7 +143,7 @@ body {
 }
 
 .emails-side-panel {
-    max-width: 38rem;
+    max-width: 28rem;
 
     &__btn {
         background-color: var(--primary-accent-color);
