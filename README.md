@@ -30,7 +30,7 @@ Aan ons de opdracht om een Interactieve datavisualisatie voor Gmail te maken. De
 ## Teams
 | Visual team          | Tech team          
 | ---------            | ------------------- 
-| Bilal Guenaoui       |  CheunCheun Yin Zhang
+| Bilal Guenaoui       |   Cheun Yin Zhang
 | Xavier               |   Whitney Abrah
  
 
