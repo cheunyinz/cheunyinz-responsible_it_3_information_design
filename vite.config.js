@@ -7,7 +7,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 fetch: resolve(__dirname, 'fetch.html'),
-                sunburst: resolve(__dirname, 'sunburst.html'),
+                final: resolve(__dirname, 'final.html'),
             }
         }
     },

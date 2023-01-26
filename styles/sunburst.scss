@@ -1,9 +1,10 @@
-body {
-    font-family: Sans-serif;
-    font-size: 11px;
-    background-color: #5eb1e52e;
-    background-image: url(/images/illustrations/background.svg);
+.sunburst-body {
+    min-height: 100vh;
+    background-color: var(--sky-background-color);
+    background-image: url(../images/illustrations/clouds_pattern_light.svg);
+    background-position: -5rem;
 }
+
 
 .slice {
     cursor: pointer;
@@ -23,132 +24,87 @@ body {
     text-anchor: middle;
 }
 
-
-.middlepoint {
-    top: 53%;
-    left: 51.3%;
-    width: 25em;
-    height: 21em;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: white;
-    position: absolute;
-    z-index: -2;
+g[data-content="Sunburst49"] {
+    display: none;
 }
 
-h1 {
-    color: var(--primary-text-color-dark);
-    text-align: center;
-    margin-top: 1em;
-    font-size: 3rem;
-}
-
-h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: -1em;
-    margin-bottom: 2em;
-
-
-
-
-}
 
 .messages-container {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 60% 40%;
+    margin: 2rem 5rem;
 }
 
-.container {
-    top: 35%;
-    left: 37%;
-    z-index: 1;
-    width: 21.5em;
-    height: 21em;
+.sunburst {
+    position: relative;
+    height: min-content;
+    margin-left: 25%;
+    align-self: center;
+
+
+    svg {
+        z-index: 2;
+        position: relative;
+    }
+}
+
+.sunburst-center-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50%;
-    position: absolute;
+    text-align: center;
 
+    &__title {
+        font-size: 8rem;
+        font-weight: 400;
+    }
 
-}
-
-.info-icon {
-    position: absolute;
-    width: 10%;
-    top: 27em;
-    left: 25em;
-    z-index: 100;
-    // transform: translate(-50%, -50%);
-    position: absolute;
+    &__text {
+        font-size: 4rem;
+    }
 
 }
 
-
-
-
-.popimg {
+.info-btn {
+    z-index: 4;
+    background: transparent;
     position: absolute;
-    width: 200%;
-    left: 5em;
-    top: -4px;
+    left: 50%;
+    top: 78%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: transparent;
+}
+
+.sunburst-popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     animation-name: zoom;
-    animation-duration: 2s;
+    animation-duration: 1s;
 
 }
 
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0)
-    }
-
-    to {
-        -webkit-transform: scale(1)
-    }
+.open {
+    display: block;
 }
+
+.hide {
+    display: none;
+}
+
+
+
 
 @keyframes zoom {
     from {
-        transform: scale(0)
+        opacity: 0;
     }
 
     to {
-        transform: scale(1)
+        opacity: 1;
     }
-}
-
-.close {
-    position: absolute;
-    // bottom: 2px;
-    height: 35px;
-    top: -1em;
-    left: 7em;
-    color: var(--primary-accent-color-light);
-    font-size: 40px;
-    font-weight: normal;
-    transition: 0.3s;
-    z-index: 10;
-    padding: 5px;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--primary-text-color-dark);
-    text-decoration: none;
-    cursor: pointer;
-    z-index: 5;
-}
-
-
-img.chatrobot {
-    position: absolute;
-    top: 60%;
-    left: 2%;
-    width: 15%;
-}
-
-img.chat1 {
-    position: absolute;
-    left: 10em;
-    top: 40%;
-    width: 15%;
 }

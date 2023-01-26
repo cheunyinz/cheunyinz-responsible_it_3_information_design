@@ -5,6 +5,8 @@
     background-size: cover;
     background-color: grey;
     background-blend-mode: multiply;
+    display: grid;
+    place-content: center;
 }
 
 .pop-up {
@@ -14,7 +16,7 @@
     background-position: -5rem;
     background-size: cover;
     border-radius: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     max-width: 35rem;
 
     &__hero-text {
