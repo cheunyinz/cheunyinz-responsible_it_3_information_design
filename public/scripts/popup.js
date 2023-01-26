@@ -1,28 +1,30 @@
-// const infoIcon = document.querySelector('.info-icon');
-// const openPop = document.getElementById('pop-up');
-// function openPopup() {
-//   openPop.classList.add('open-popup');
-// }
-// function closePopup() {
-//   openPop.classList.remove('open-popup');
-// }
-// infoIcon.addEventListener('click', openPopup);
-// openPop.addEventListener('click', closePopup);
-const popUp = document.getElementById("popUp");
-const infoIcon = document.getElementById("info-icon");
+const infoBtn = document.querySelector('#info-button');
+const sunburstCenter = document.querySelector('#center-content');
+const popUp = document.querySelector('#sunburst-pop-up');
+const figureText = document.querySelector('#figure-text');
+let popUpOpen = false;
 
 
 
 
+infoBtn.addEventListener('click', () => {
+    popUp.classList.toggle('open');
+    sunburstCenter.classList.toggle('hide');
+    if (popUpOpen == false) {
+        popUpOpen = true;
+        figureText.textContent = 'This is how much your CO2 ussage is in real life so start deleting emails to reduce your co2 footprint!';
+    } else {
+        popUpOpen = false;
+        figureText.textContent = 'Click me to see how much C02 it is in comparison to real life things!';
 
-infoIcon.addEventListener("click", function() {
-    this.src = "/images/illustrations/pop-up.png";
-    this.classList.add("popimg");
+    }
 });
 
-var span = document.getElementsByClassName("close")[0];
 
-span.onclick = function() {
-    popUp.style.display = "none";
-  }
+
+
+
+
+
+
 

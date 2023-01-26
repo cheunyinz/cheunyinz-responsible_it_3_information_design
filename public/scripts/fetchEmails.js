@@ -24,10 +24,8 @@ let sunburstData = {};
 
 const authorizeBtn = document.querySelector('#authorize_button');
 const signOutBtn = document.querySelector('#signout_button');
-
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
-
 /**
  * Callback after api.js is loaded.
  */
@@ -278,32 +276,6 @@ function groupByCompanyResults(results) {
 
     console.log(sunburstData, "sunburst data")
 }
-
-// function groupByNameResults(results) {
-
-//     let finalResults = results.map(item => {
-//         let newSubArray = {};
-//         for (let i = 0; i < item.children.length; i++) {
-//             for (let k = 0; k < results[i].children[i].children.length; k++) {
-//                 let name = item.children[k].name;
-//                 if (!newSubArray[name]) {
-//                     newSubArray[name] = []
-//                 }
-//                 newSubArray[name].push(item.children[k]);
-//             }
-//             let finalArray = [];
-//             for (let name in newSubArray) {
-//                 finalArray.push({ name: name, children: newSubArray[name] });
-//             }
-//             item.children = finalArray;
-//             return item;
-//         }
-//     });
-
-//     console.log(finalResults, "groupedArRAY")
-// }
-
-
 
 
 /*TIJDELIJK*/

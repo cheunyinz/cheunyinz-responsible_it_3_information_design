@@ -1,4 +1,3 @@
-import * as d3 from 'd3';
 
 const width = window.innerWidth,
     height = window.innerHeight,
@@ -15,7 +14,7 @@ const y = d3.scaleSqrt()
 
 // const color = d3.scaleOrdinal(d3.schemeCategory20);
 var color = d3.scaleOrdinal()
-    .range(['white', '#CA1818', '#FAA41B', '#FFD45B', '#C9E58C', '#7BA591', '#8CE5A0', '#F15B4C', '#2C736C']);
+    .range(['#CA1818', '#FAA41B', '#FFD45B', '#C9E58C', '#7BA591', '#8CE5A0', '#F15B4C', '#2C736C']);
 
 const partition = d3.partition();
 
@@ -40,7 +39,7 @@ const middleArcLine = d => {
 };
 
 const textFits = d => {
-    const CHAR_SPACE = 1;
+    const CHAR_SPACE = 6;
 
     const deltaAngle = x(d.x1) - x(d.x0);
     const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
@@ -50,13 +49,11 @@ const textFits = d => {
 };
 
 const svg = d3.select('.sunburst').append('svg')
-    .style('width', '100vw')
-    .style('height', '100vh')
-    .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+    // .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+    .attr('viewBox', `-451.5 -451.5 903 903`)
     .on('click', () => focusOn()); // Reset zoom on canvas click
 
 d3.json('./sunburst_data.json', (error, root) => {
-    console.log("test");
     if (error) throw error;
     root = d3.hierarchy(root);
     root.sum(d => d.size);
@@ -67,7 +64,7 @@ d3.json('./sunburst_data.json', (error, root) => {
     slice.exit().remove();
 
     const newSlice = slice.enter()
-        .append('g').attr('class', 'slice')
+        .append('g').attr('class', 'slice').attr('data-content', d => d.data.name + formatNumber(d.value))
         .on('click', d => {
             d3.event.stopPropagation();
             focusOn(d);
@@ -137,4 +134,3 @@ function focusOn(d = { x0: 0, x1: 1, y0: 0, y1: 1 }) {
             })
     }
 }
-
