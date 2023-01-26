@@ -2,7 +2,7 @@
 
 # RESPONSIBLE IT - GREEN G  
 
-##Installatie stappen
+## Installatie stappen
 
 1. Clone de repo
    ```sh
